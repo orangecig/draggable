@@ -1,0 +1,44 @@
+{% macro render(ViewAttr) %}
+  {% set url = 'https://shopify.github.io/draggable' %}
+  {% set trackingId = 'UA-107063633-1' %}
+  {% set titleSep = ' | ' %}
+
+  {% set HeadAttr = {
+    siteName: 'Draggable JS Examples',
+    description: 'Draggable is a lightweight, responsive, modern drag and drop JavaScript library – the ideal choice for adding slick native-feeling drag and drop behaviour to your web apps.',
+    siteUrl: url,
+    socialImg: url + '/assets/img/social/draggable-social.png',
+    twitterHandle: '@Shopify',
+    twitterId: '17136315'
+  } %}
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>
+      {{ViewAttr.title + titleSep if ViewAttr.title}}
+      {{HeadAttr.siteName}}
+    </title>
+
+    <meta name="description" content="{{HeadAttr.description}}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    {% import './SocialShare.html' as SocialShare %}
+    {{ SocialShare.render(ViewAttr, HeadAttr) }}
+
+    {% include './Favicon.html' %}
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="assets/css/app.css">
+
+    <script src="assets/js/runtime.js" defer></script>
+    <script src="assets/js/vendor.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+
+    {% import './Analytics.html' as Analytics %}
+    {{ Analytics.render(trackingId) }}
+  </head>
+{% endmacro %}

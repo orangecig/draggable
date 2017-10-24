@@ -1,0 +1,29 @@
+////
+/// Components
+/// Content
+////
+
+@import './mixins';
+
+.Content {
+  @include centered-width(get-layout-width(content));
+  margin-bottom: get-spacing(loose);
+  text-align: center;
+
+  @media screen and (min-width: get-breakpoint(tablet)) {
+    margin-bottom: get-spacing(fat);
+  }
+
+  @media screen and (min-width: get-breakpoint(tablet, wide)) {
+    margin-bottom: get-spacing(fattest);
+  }
+
+  // --- Typographic elements
+  p {
+    @include ContentParagraph;
+  }
+}
+
+.Content--sizeSmall {
+  max-width: get-layout-width();
+}

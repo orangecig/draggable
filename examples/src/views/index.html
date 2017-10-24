@@ -1,0 +1,68 @@
+{% extends 'views/templates/document.html' %}
+
+{% block PageId %}Home{% endblock %}
+
+{% block head %}
+  {% set PageAttrs = {
+    title: 'Home'
+  } %}
+
+  {% import 'components/Document/Head.html' as Head %}
+  {{ Head.render(PageAttrs) }}
+{% endblock %}
+
+{% block main %}
+  {% import 'components/PageHeader/PageHeader.html' as PageHeader %}
+  {{ PageHeader.render(
+    'Draggable',
+    'Initializing Draggable on a set of elements allows basic dragging. Drag an element and create a mirror of the original source.'
+  ) }}
+
+  <section class="Section">
+    <article class="Example Example--pageHome">
+      <div class="BlockLayout BlockLayout--typeFlex">
+        <a href="#" class="Block Block--item1 draggable-source" title="Click to drag">
+          <div class="BlockInterior">
+            <h3 class="Heading Heading--size2">one</h3>
+          </div>
+        </a>
+
+        <a href="#" class="Block Block--item2 draggable-source" title="Click to drag">
+          <div class="BlockInterior">
+            <h3 class="Heading Heading--size2">two</h3>
+          </div>
+        </a>
+
+        <a href="#" class="Block Block--item3 draggable-source" title="Click to drag">
+          <div class="BlockInterior">
+            <h3 class="Heading Heading--size2">three</h3>
+          </div>
+        </a>
+
+        <a href="#" class="Block Block--item4 draggable-source" title="Click to drag">
+          <div class="BlockInterior">
+            <h3 class="Heading Heading--size2">four</h3>
+          </div>
+        </a>
+
+        <a href="#" class="Block Block--item5 draggable-source" title="Click to drag">
+          <div class="BlockInterior">
+            <h3 class="Heading Heading--size2">five</h3>
+          </div>
+        </a>
+
+        <div class="Block Block--item6 Block--isDisabled">
+          <div class="BlockInterior">
+            <h3 class="Heading Heading--size2">six</h3>
+          </div>
+        </div>
+
+        <a href="#" class="Block Block--item7 draggable-source" title="Click to drag">
+          <div class="BlockInterior">
+            <h3 class="Heading Heading--size2">seven</h3>
+          </div>
+        </a>
+      </div>
+    </article>
+  </section>
+{% endblock %}

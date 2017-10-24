@@ -1,0 +1,18 @@
+////
+/// Components
+/// Content mixins
+////
+
+@mixin ContentParagraph {
+  font-size: get-type-scale(paragraph);
+  font-weight: 700;
+  line-height: 1.6;
+
+  @media screen and (min-width: get-breakpoint(tablet)) {
+    font-size: get-type-scale(paragraph, tablet);
+  }
+
+  @media screen and (min-width: get-breakpoint(tablet, wide)) {
+    font-size: get-type-scale(paragraph, tablet-wide);
+  }
+}

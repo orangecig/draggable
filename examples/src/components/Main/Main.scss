@@ -1,0 +1,20 @@
+////
+/// Components
+/// Main
+////
+
+@import '../MobileNav/props';
+
+.Main {
+  padding: $mobile-nav-padding-top get-layout-width(padding, tight) get-layout-width(padding);
+
+  @media screen and (min-width: get-breakpoint()) {
+    padding-top: get-layout-width(padding);
+    padding-left: get-layout-width(sidebar) + get-layout-width(padding, tight);
+  }
+
+  @media screen and (min-width: get-breakpoint(desktop)) {
+    padding-right: get-layout-width(padding, thick);
+    padding-left: get-layout-width(sidebar) + get-layout-width(padding, thick);
+  }
+}

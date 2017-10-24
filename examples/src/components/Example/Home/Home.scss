@@ -1,0 +1,41 @@
+////
+/// Components
+/// Examples Home
+////
+
+.Example--pageHome {
+  .Block--item1,
+  .Block--item2,
+  .Block--item4,
+  .Block--item5 {
+    flex-basis: 50%;
+  }
+
+  @media screen and (min-width: get-breakpoint(tablet)) {
+    .BlockInterior {
+      min-height: columns() * 1.5;
+    }
+  }
+
+  @media screen and (min-width: get-breakpoint(desktop)) {
+    .Block--item1,
+    .Block--item2,
+    .Block--item3,
+    .Block--item4 {
+      flex-basis: 25%;
+    }
+
+    .Block--item5 {
+      flex-basis: 100%;
+    }
+
+    .Block--item6,
+    .Block--item7 {
+      flex-basis: 50%;
+    }
+
+    .BlockInterior {
+      min-height: columns() * 2;
+    }
+  }
+}

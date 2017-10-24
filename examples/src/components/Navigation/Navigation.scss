@@ -1,0 +1,69 @@
+////
+/// Components
+/// Navigation
+////
+
+.Navigation {
+  padding: get-spacing(tight);
+
+  @media screen and (min-width: get-breakpoint()) {
+    flex: 1; // for sticky footer
+  }
+
+  @media screen and (min-width: get-breakpoint(desktop)) {
+    padding-right: get-spacing(loose);
+    padding-left: get-spacing(loose);
+  }
+}
+
+.NavList {
+  & + & {
+    margin-top: get-spacing();
+
+    @media screen and (min-width: get-breakpoint()) {
+      margin-top: get-spacing(looser);
+    }
+  }
+}
+
+.NavItem {
+  & + & {
+    margin-top: get-spacing(tightest) + $spacing-unit;
+
+    @media screen and (min-width: get-breakpoint()) {
+      margin-top: get-spacing(tighter);
+    }
+  }
+}
+
+.NavHeading,
+.NavLink {
+  font-size: 3.2rem;
+  letter-spacing: -0.1rem;
+  line-height: 0.9;
+
+  @media screen and (min-width: get-breakpoint()) {
+    font-size: 2.4rem;
+  }
+}
+
+.NavHeading {
+  font-weight: 700;
+  color: white;
+}
+
+// Use .Link class?
+.NavLink {
+  font-weight: 600;
+  color: get-color(ash, dark);
+  transition: color get-duration() get-easing();
+
+  &:focus,
+  &:hover {
+    color: get-color(purple);
+  }
+
+  &:active {
+    color: get-color(purple, dark);
+  }
+}

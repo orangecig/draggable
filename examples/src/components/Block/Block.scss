@@ -1,0 +1,104 @@
+////
+/// Components
+/// Block
+////
+
+@import '../../styles/utilities/layout';
+
+$block-active-color: darken(get-color(brand, blue), 10%);
+
+.BlockLayout--typeFloat {
+  @include clearfix;
+
+  .Block {
+    float: left;
+  }
+}
+
+.BlockLayout--typeFlex {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -#{get-layout-width(gutter)};
+  margin-left: -#{get-layout-width(gutter)};
+
+  .Block {
+    flex: 1 1 100%;
+    padding-top: get-layout-width(gutter);
+    padding-left: get-layout-width(gutter);
+  }
+}
+
+///
+/// Block
+.Block {
+  display: block;
+}
+
+///
+/// Block Interior
+.BlockInterior {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  // width: columns(2);
+  min-height: columns();
+
+  color: get-color(coal, dark);
+  background-color: white;
+  border: get-border();
+  transition-property: color, background-color, border-color;
+  transition-duration: get-duration();
+  transition-timing-function: get-easing();
+
+  & + & {
+    // margin-top: get-layout-width(gutter);
+  }
+
+  @media screen and (min-width: get-breakpoint(tablet)) {
+    // min-width: columns();
+    // min-height: columns(2);
+  }
+
+  // prevent text selection
+  .Heading {
+    pointer-events: none;
+    // vertical alignment
+    margin-top: -0.1em;
+  }
+
+  // interaction
+  .Block:focus &,
+  .Block:hover & {
+    color: get-color(brand, blue);
+    border-color: get-color(brand, blue);
+  }
+
+  .Block:active & {
+    color: $block-active-color;
+    border-color: $block-active-color;
+  }
+
+  // dragging
+  .Block.draggable-source--is-dragging & {
+    color: get-color(ash, dark);
+    border-color: get-color(ash, dark);
+  }
+
+  .Block.draggable-mirror & {
+    color: white;
+    background-color: get-color(brand, blue);
+    border-color: get-color(brand, blue);
+  }
+}
+
+.Block--isDisabled {
+  pointer-events: none;
+
+  .BlockInterior {
+    color: white;
+    background-color: get-color(coal, dark);
+    border-color: get-color(coal, dark);
+  }
+}

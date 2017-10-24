@@ -1,0 +1,52 @@
+////
+/// Components
+/// Heading
+////
+
+.Heading,
+.Subheading  {
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+///
+/// Standard variations
+.Heading--size1 {
+  margin-bottom: get-spacing(tight);
+  font-size: get-type-scale(h1);
+  font-weight: get-type-scale(h1, weight);
+
+  @media screen and (min-width: get-breakpoint(tablet)) {
+    margin-bottom: get-spacing();
+    font-size: get-type-scale(h1, tablet);
+  }
+
+  @media screen and (min-width: get-breakpoint(desktop)) {
+    font-size: get-type-scale(h1, desktop);
+  }
+}
+
+.Heading--size2 {
+  font-size: get-type-scale(h2);
+  font-weight: get-type-scale(h2, weight);
+
+  @media screen and (min-width: get-breakpoint(tablet)) {
+    font-size: get-type-scale(h2, tablet);
+  }
+
+  @media screen and (min-width: get-breakpoint(desktop)) {
+    font-size: get-type-scale(h2, desktop);
+  }
+}
+
+///
+/// Subheading
+.Subheading {
+  font-size: get-type-scale(subheading);
+  font-weight: get-type-scale(subheading, weight);
+  color: get-color(coal, light);
+
+  @media screen and (min-width: get-breakpoint(tablet)) {
+    font-size: get-type-scale(subheading, tablet);
+  }
+}

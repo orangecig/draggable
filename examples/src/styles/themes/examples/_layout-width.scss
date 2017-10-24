@@ -1,0 +1,20 @@
+////
+/// Examples Theme
+/// Layout Width
+////
+
+$examples-layout-width-data: (
+  base: 1rem,
+  gutter: 0.8rem,
+  column: 9.3rem,
+  sidebar: 32rem,
+  page-header: 64.2rem,
+  padding: (
+    // spacing: tight
+    tight: 2.4rem,
+    // spacing: looser
+    base: 4.8rem,
+    // spacing: fattest
+    thick: 8rem,
+  ),
+);
